@@ -28,7 +28,11 @@ namespace TaskFlow.Domain.Entities
         public int ProjectId { get; set; }
 
         [ForeignKey("ProjectId")]
-        public virtual Project Project { get; set; };
+        public virtual Project Project { get; set; }
 
+        // 2. Relationship to User (Many to One)
+        // A ticket might not be assigned to anyone yet (nullable)
+        // Note: will create AppUser entity later
+        public string? AssignedToUserId { get; set; }
     }
 }
