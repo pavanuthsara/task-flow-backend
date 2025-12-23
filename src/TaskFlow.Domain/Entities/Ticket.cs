@@ -29,5 +29,8 @@ namespace TaskFlow.Domain.Entities
         // A ticket might not be assigned to anyone yet (nullable)
         // Note: will create AppUser entity later
         public string? AssignedToUserId { get; set; }
+
+        [ForeignKey("AssignedToUserId")]
+        public virtual AppUser? AssignedToUser { get; set; }
     }
 }
